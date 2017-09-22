@@ -1,0 +1,5 @@
+library(arulesSequences)
+library(arules)
+t <- read_baskets(con = system.file("data", "test_09211629.txt", package = "base"), sep = ',', info = c("sequenceID", "eventID", "SIZE"))
+s6 <- cspade(t, parameter = list(support = 0.7, maxlen = 5), control = list(verbose = TRUE))
+as(s6, "data.frame")
